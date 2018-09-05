@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sys2_xor_encrypt", "sys2_xor_encrypt\sys2_xor_encrypt.csproj", "{5E38A48E-C453-4393-BBAB-693D56889DDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E38A48E-C453-4393-BBAB-693D56889DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E38A48E-C453-4393-BBAB-693D56889DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E38A48E-C453-4393-BBAB-693D56889DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E38A48E-C453-4393-BBAB-693D56889DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E999BD0E-8248-4634-8499-9E1395E1157C}
+	EndGlobalSection
+EndGlobal
