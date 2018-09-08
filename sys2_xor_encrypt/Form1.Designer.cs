@@ -59,6 +59,7 @@
 			this.textBoxKey.Size = new System.Drawing.Size(166, 22);
 			this.textBoxKey.TabIndex = 2;
 			this.textBoxKey.Text = "123456";
+			this.textBoxKey.TextChanged += new System.EventHandler(this.textBoxKey_TextChanged);
 			// 
 			// progressBar1
 			// 
@@ -67,6 +68,7 @@
 			this.progressBar1.Location = new System.Drawing.Point(0, 294);
 			this.progressBar1.Name = "progressBar1";
 			this.progressBar1.Size = new System.Drawing.Size(406, 33);
+			this.progressBar1.Step = 1;
 			this.progressBar1.TabIndex = 3;
 			// 
 			// label1
@@ -103,6 +105,11 @@
             0,
             0,
             0});
+			this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.numericUpDown1.Name = "numericUpDown1";
 			this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
 			this.numericUpDown1.TabIndex = 7;
@@ -111,6 +118,7 @@
             0,
             0,
             0});
+			this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
 			// 
 			// Form1
 			// 

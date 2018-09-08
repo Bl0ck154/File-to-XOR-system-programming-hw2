@@ -106,11 +106,11 @@ namespace sys2_xor_encrypt
 			{
 				int blockSize = (int)Math.Min(numericUpDown1.Value, fsSource.Length);
 				byte[] bytes = new byte[blockSize];
-				progressBar1.Invoke(new Action(() =>
-				{
-					progressBar1.Maximum = (int)fsSource.Length;
-					progressBar1.Step = blockSize;
-				}));
+				//progressBar1.Invoke(new Action(() =>
+				//{
+				//	progressBar1.Maximum = (int)fsSource.Length;
+				//	progressBar1.Step = blockSize;
+				//}));
 				DateTime dateTime = DateTime.Now;
 				int speed = 0;
 				long? revers_pos = null;
@@ -122,10 +122,10 @@ namespace sys2_xor_encrypt
 					{
 						revers_pos = fsSource.Position;
 						fsSource.Position = 0;
-						progressBar1.Invoke(new Action(() =>
-						{
-							progressBar1.Step = -blockSize;
-						}));
+						//progressBar1.Invoke(new Action(() =>
+						//{
+						//	progressBar1.Step = -blockSize;
+						//}));
 						continue;
 					}
 
@@ -143,6 +143,10 @@ namespace sys2_xor_encrypt
 					{
 						if (revers_pos == null && buttonState == ButtonState.CANCELING)
 							break;
+
+						if((fsSource.Position+i) % (int)(fsSource.Length/100) == 0)
+							progressBar1.Invoke(new Action(() => { progressBar1.PerformStep(); }));
+
 						bytes[i] ^= (byte)key[i % key.Length];
 					//	fsSource.WriteByte(bytes[i]);
 						speed++;
@@ -150,10 +154,11 @@ namespace sys2_xor_encrypt
 
 					if (revers_pos == null && buttonState == ButtonState.CANCELING)
 						continue;
+
 					fsSource.Write(bytes, 0, reader_bytes);
-					progressBar1.Invoke(new Action(() => {
-						progressBar1.PerformStep();
-					}));
+					//progressBar1.Invoke(new Action(() => {
+					//	progressBar1.PerformStep();
+					//}));
 
 					if (revers_pos == fsSource.Position + reader_bytes)
 					{
@@ -165,6 +170,34 @@ namespace sys2_xor_encrypt
 			}
 			MessageBox.Show("File was crypted succesfully!");
 			buttonState = ButtonState.START;
+		}
+
+		private void textBoxKey_TextChanged(object sender, EventArgs e)
+		{
+			if(textBoxKey.Text.Length < 6)
+			{
+				buttonFileChoose.Text = "The key must contains at least 6 symbols";
+				buttonFileChoose.Enabled = false;
+			}
+			else
+			{
+				buttonFileChoose.Enabled = true;
+				buttonState = buttonState;
+			}
+		}
+
+		private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+		{
+			if (numericUpDown1.Value <= 0)
+			{
+				buttonFileChoose.Text = "The block size must be higher then 0";
+				buttonFileChoose.Enabled = false;
+			}
+			else
+			{
+				buttonFileChoose.Enabled = true;
+				buttonState = buttonState;
+			}
 		}
 	}
 }
