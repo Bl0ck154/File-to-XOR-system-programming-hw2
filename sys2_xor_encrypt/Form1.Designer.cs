@@ -45,6 +45,7 @@
 			this.buttonFileChoose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.buttonFileChoose.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.buttonFileChoose.Location = new System.Drawing.Point(0, 28);
 			this.buttonFileChoose.Name = "buttonFileChoose";
 			this.buttonFileChoose.Size = new System.Drawing.Size(406, 260);
